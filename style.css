@@ -1,0 +1,199 @@
+/* CSS RESET */
+*{ 
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+/* IMPORTAÇÃO DE FONTE */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+    body{
+     font-family: 'Open Sans', sans-serif;
+     font-size: 1em;
+    }
+/* LAYOUT */
+.Container{
+     margin: 0 auto; /* Centralização */
+     /* Remoção da cor background-color: #dcdcdc; */
+}
+/* Organizar o Container - Flexbox  */
+.Flex{
+    display: flex;
+    justify-content:space-between;
+    /* Remoção da cor didática background-color: #a9a9a9; */
+}
+
+.Botao{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 700;
+    background-color: #c00000;
+    padding: 30px 40px;
+    border: 2px solid white;
+    border-radius: 30px;
+}
+
+
+/* Botão de retorno ao topo do site */
+#topo{
+    position:fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+
+
+
+/*-----SMARTPHONE  PORTRAIT----*/
+/* Cabeçalho */
+/* Usa-se header e não id ou class, pois só tenho uma tag dessa */
+header{
+    height: 60px;
+}
+
+#logo img {
+    width: 128px;
+    height: 128px;
+
+}
+
+#check{
+    display: none;
+}
+
+label{
+    font-size: 3em;
+    padding-right: 15px;
+}
+/* ul está subordinada a nav */
+nav ul {
+    list-style: none;
+    background-color: #343538;
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 100%;
+    transition: all 0.5s;
+}
+#check:checked~ul{
+    right: 0;
+}
+nav ul li{
+    padding: 20px;
+    border-bottom: 1px solid #a9a9a9;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+/* DESTAQUE TAG MAIN */
+main{
+    height: 75vh;
+    background: url(img/banner.jpg);
+    background-size: over;
+    color:white;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+
+}
+main h1{
+    font-size: 2.5em;
+
+}
+main h2{
+    font-size: 1em;
+    margin: 20px 0px 50px 0px;
+}
+
+
+/*-----SMARTPHONE LANDSCAPE----*/
+/* @media serve para alterar informações de acordo com o dispositivo */
+@media(min-width: 576px){
+    
+    /*
+    ///////Alteração de cor body apagadas dos outros
+    body{
+        background-color: aqua;
+    }
+    */
+
+    /* LAYOUT */
+    .Container{
+        max-width: 540px; /* Centralização */
+    }
+    /* MAIN */
+    main h1, main h2{
+        text-shadow: black 0.05em 0.05em 0.05em;
+    }
+    
+}
+/*-----TABLET PORTRAIT----*/
+@media(min-width: 768px){
+     /* LAYOUT */
+    .Container{
+        max-width: 720px; /* Centralização */
+    }
+    /* DESTAQUE */
+    main{
+        height: 45vh;
+    }
+     main h1{ 
+        font-size: 5.5em;
+    }
+    main h2 {
+        font-size: 2em;
+    }
+}
+
+/*-----TABLET LANDSCAPE----*/
+@media(min-width: 992px){
+    /* LAYOUT */
+    .Container{
+        max-width: 960px; /* Centralização */
+    }
+    main{
+        height: 70vh;
+    }
+}
+
+/*-----DESKTOP----*/
+@media(min-width: 1200px){
+    /* LAYOUT */
+    .Container{
+       max-width: 1140px; /* Centralização */
+    }
+    /* Cabeçalho */
+    header{
+        height: 120px;
+    }
+
+    #logo img {
+        width: 189px;
+        height: 189px;
+        margin-top: 30px;
+    }
+    label{
+        display: none;
+    }
+    nav ul{
+        position: static;
+        height: auto;
+        background-color: transparent;
+        margin-top: 50px;
+    }
+    nav ul li{
+        float: left;
+        border: 0;
+    }
+    nav ul li a{
+        color: #343538;
+    }
+    /* Mudar cor quando mouse passar em cima */
+    nav ul li a:hover{
+        color:#c00000
+
+    }
+}
