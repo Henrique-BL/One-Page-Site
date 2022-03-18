@@ -1,4 +1,4 @@
-/* CSS RESET */
+/* CSS RESET, usado pois os navegadores estabelecem valores padrões ruins/básicos*/
 *{ 
     margin: 0;
     border: 0;
@@ -10,18 +10,25 @@
      font-family: 'Open Sans', sans-serif;
      font-size: 1em;
     }
-/* LAYOUT */
-.Container{
+
+/* LAYOUT -> Classes responsáveis por alteração geral */
+
+.Container{ 
      margin: 0 auto; /* Centralização */
      /* Remoção da cor background-color: #dcdcdc; */
+
 }
 /* Organizar o Container - Flexbox  */
 .Flex{
     display: flex;
     justify-content:space-between;
-    /* Remoção da cor didática background-color: #a9a9a9; */
+    /* Remoção da cor de uso didático background-color: #a9a9a9; */
 }
-
+.Flex2{
+    display: flex;
+    align-items: center;
+}
+/* Criação do design do botão, aplicado na tag <a/a> da tag main */
 .Botao{
     text-decoration: none;
     color: white;
@@ -34,13 +41,12 @@
 }
 
 
-/* Botão de retorno ao topo do site */
+/* Definição do local fixo do botão de retorno ao topo do site do id topo da tag <a/a>*/
 #topo{
     position:fixed;
     right: 10px;
     bottom: 10px;
 }
-
 
 
 
@@ -57,33 +63,37 @@ header{
 
 }
 
-#check{
+#check{     /* Faz o botão lateral do menu sumir e ficar só o símbolo que foi definido no checkbox id =check */
     display: none;
 }
 
+/* Aumenta o tamanho do símbolo do menu e posiciona */
 label{
     font-size: 3em;
     padding-right: 15px;
 }
 /* ul está subordinada a nav */
 nav ul {
-    list-style: none;
+    list-style: none; 
     background-color: #343538;
-    height: 100vh;
+    height: 100vh; /* Pegar toda tela do celular em altura */
     position: fixed;
     top: 60px;
-    right: -100%;
-    width: 100%;
-    transition: all 0.5s;
+    /* ABAIXO TODA PARTE RESPONSÁVEL PELO EFEITO DE APARECER DA DIRETA PARA ESQUERDA */
+    
+    right: -100%; /* Empurra toda a div com a lista para direita do site pois -100  */
+    width: 100%;     /* Faz com que pegue a tela toda do celular em largura */
+    transition: all 0.5s;/* Responsável pela lentidão do aparecimento da tela */
 }
-#check:checked~ul{
+
+*#check:checked~ul{ /* Quando o botão de id = check for marcado vai aparecer a lista dentro de ul */
     right: 0;
 }
-nav ul li{
+nav ul li{      /* Distancia os elementos da lista e coloca uma linha branca abaixo (border-bottom) delas */
     padding: 20px;
     border-bottom: 1px solid #a9a9a9;
 }
-nav ul li a{
+nav ul li a{ /* Tira a decoração de hiperlink (azul)  e coloca branco */
     text-decoration: none;
     color: #fff;
 }
@@ -107,8 +117,32 @@ main h2{
     font-size: 1em;
     margin: 20px 0px 50px 0px;
 }
+/*  */
+#sobre{
+    padding: 50px 0px;      /*Espaçamento superior e inferior de 50 e left e right de 0*/
+    background: url(img/background.png); 
+    background-size: cover; /*Ajusta imagem ao tamanho do container*/
+}
+/* Remover imagem do notebook */
+#DestaqueSobre{
+    display: none;
+}
 
+#textoSobre{    
+    color: white;
+    padding: 0px 10px;
 
+}
+#textoSobre h2{
+    margin-bottom: 10px;
+}
+
+.topicoSobre{
+    margin-top: 20px;
+}
+.topicoSobre img{
+    margin-right: 10px;
+}
 /*-----SMARTPHONE LANDSCAPE----*/
 /* @media serve para alterar informações de acordo com o dispositivo */
 @media(min-width: 576px){
@@ -122,9 +156,10 @@ main h2{
 
     /* LAYOUT */
     .Container{
-        max-width: 540px; /* Centralização */
+        max-width: 540px; /* Centralização de tudo que está no Container, valor pré-estabelecido e depende do min-width*/
     }
     /* MAIN */
+    /* Adicionando sombreamento  */
     main h1, main h2{
         text-shadow: black 0.05em 0.05em 0.05em;
     }
@@ -140,7 +175,7 @@ main h2{
     main{
         height: 45vh;
     }
-     main h1{ 
+    main h1{ 
         font-size: 5.5em;
     }
     main h2 {
@@ -169,12 +204,13 @@ main h2{
     header{
         height: 120px;
     }
-
+    /* Aumenta logo principal  */
     #logo img {
         width: 189px;
         height: 189px;
         margin-top: 30px;
     }
+    /* O símbolo de menu responsivo some e fica só as opções da lista */
     label{
         display: none;
     }
@@ -185,7 +221,7 @@ main h2{
         margin-top: 50px;
     }
     nav ul li{
-        float: left;
+         float: left; /* Disposição dos itens  */
         border: 0;
     }
     nav ul li a{
