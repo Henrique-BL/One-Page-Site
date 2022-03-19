@@ -28,6 +28,10 @@
     display: flex;
     align-items: center;
 }
+.Flex3{
+    display:flex;
+    flex-direction: column;
+}
 /* Criação do design do botão, aplicado na tag <a/a> da tag main */
 .Botao{
     text-decoration: none;
@@ -149,6 +153,29 @@ main h2{
 .topicoSobre img{
     margin-right: 10px;
 }
+/* One Page Section */
+
+#onepage{
+    padding: 50px 10px;
+    background-color: #f89615;
+}
+#onepage h2{
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: black 0.5em, 0.5em, 0.5em;
+}
+#onepage p{
+    margin-bottom: 25px;
+    color: white;
+    text-shadow: black;
+}
+
+#videoOnepage iframe{  /*Alterar o tamanho que o vídeo ocupa
+                         Site para calcular height: Aspect radio Calculator*/      
+    width: 340px;
+    height: 191px;
+    border: 0;
+}
 /*-----SMARTPHONE LANDSCAPE----*/
 /* @media serve para alterar informações de acordo com o dispositivo */
 @media(min-width: 576px){
@@ -168,6 +195,11 @@ main h2{
     /* Adicionando sombreamento  */
     main h1, main h2{
         text-shadow: black 0.05em 0.05em 0.05em;
+    }
+    /* One Page Section -> Modifica todos menos portrait para resolução padrõa do yt */
+    #videoOnepage iframe{ 
+        width: 560px;
+        height: 315px;
     }
     
 }
@@ -248,6 +280,11 @@ main h2{
     #DestaqueSobre img{
         border-radius: 50%;
         margin-right: 30px;
+    }
+    /* One Page */
+    .Flex3{
+        flex-direction: row;
+        align-items: center;
     }
 
 }
