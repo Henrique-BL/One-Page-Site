@@ -70,7 +70,10 @@ header{
 /* Aumenta o tamanho do símbolo do menu e posiciona */
 label{
     font-size: 3em;
-    padding-right: 15px;
+    position: fixed;
+    top: 5px;
+    right: 15px;
+    color: rgba(0, 0, 0, 0.5) /*Transparencia de 50%*/
 }
 /* ul está subordinada a nav */
 nav ul {
@@ -102,6 +105,7 @@ main{
     height: 75vh;
     background: url(img/banner.jpg);
     background-size: over;
+    background-position: center;
     color:white;
     display: flex;
     flex-direction: column-reverse;
@@ -117,11 +121,13 @@ main h2{
     font-size: 1em;
     margin: 20px 0px 50px 0px;
 }
-/*  */
+
+/* Sobre  */
 #sobre{
     padding: 50px 0px;      /*Espaçamento superior e inferior de 50 e left e right de 0*/
     background: url(img/background.png); 
     background-size: cover; /*Ajusta imagem ao tamanho do container*/
+    background-position: center;
 }
 /* Remover imagem do notebook */
 #DestaqueSobre{
@@ -232,4 +238,16 @@ main h2{
         color:#c00000
 
     }
+    /* Sobre */
+    #sobre{ /* efeito de rolagem parallax na imagem de fundo*/
+        background-attachment: fixed;
+    }
+    #DestaqueSobre{
+        display: inline;
+    }
+    #DestaqueSobre img{
+        border-radius: 50%;
+        margin-right: 30px;
+    }
+
 }
