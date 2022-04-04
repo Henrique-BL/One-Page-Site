@@ -96,7 +96,7 @@ nav ul {
 *#check:checked~ul{ /* Quando o botão de id = check for marcado vai aparecer a lista dentro de ul */
     right: 0;
 }
-nav ul li{      /* Distancia os elementos da lista e coloca uma linha branca abaixo (border-bottom) delas */
+nav ul li{      /* Distancia os elementos da lista e coloca uma linha  abaixo (border-bottom) delas */
     padding: 20px;
     border-bottom: 1px solid #a9a9a9;
 }
@@ -175,6 +175,30 @@ main h2{
     width: 340px;
     height: 191px;
     border: 0;
+}
+/* Wireframe Section */
+#Wireframe{
+    padding: 50px 10px;
+    background: url(img/background.png);
+    background-position: center;
+    background-size: cover;
+}
+#Wiretexto{
+    color: white;
+}
+
+#Wiretexto h2{
+    margin-bottom: 10px;
+}
+#Wiretexto p{
+    margin-bottom: 50px;
+    text-shadow: black;
+}
+#Wiretexto span{
+    display: none;
+}
+#QrCode{
+    display: none;
 }
 /*-----SMARTPHONE LANDSCAPE----*/
 /* @media serve para alterar informações de acordo com o dispositivo */
@@ -277,7 +301,7 @@ main h2{
     #DestaqueSobre{
         display: inline;
     }
-    #DestaqueSobre img{
+    #DestaqueSobre img{ /*Arrendondamento da imagem*/
         border-radius: 50%;
         margin-right: 30px;
     }
@@ -287,4 +311,17 @@ main h2{
         align-items: center;
     }
 
+    /* Wireframe */
+    #Wiretexto {
+        background-attachment: fixed;
+    }
+    #Wiretexto span{
+        display: inline;
+    }
+    #QrCode{
+        display: inline;
+    }
+    #QrCode img{
+        margin-top: 50px;
+    }
 }
