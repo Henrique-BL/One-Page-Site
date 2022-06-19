@@ -6,10 +6,10 @@
 }
 /* IMPORTAÇÃO DE FONTE */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-    body{
-     font-family: 'Open Sans', sans-serif;
-     font-size: 1em;
-    }
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+ }
 
 /* LAYOUT -> Classes responsáveis por alteração geral */
 
@@ -32,6 +32,11 @@
     display:flex;
     flex-direction: column;
 }
+.Flex4{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 /* Criação do design do botão, aplicado na tag <a/a> da tag main */
 .Botao{
     text-decoration: none;
@@ -41,7 +46,7 @@
     background-color: #c00000;
     padding: 30px 40px;
     border: 2px solid white;
-    border-radius: 30px;
+    border-radius: 50px;
 }
 
 
@@ -81,17 +86,18 @@ label{
 }
 /* ul está subordinada a nav */
 nav ul {
-    list-style: none; 
-    background-color: #343538;
-    height: 100vh; /* Pegar toda tela do celular em altura */
-    position: fixed;
-    top: 60px;
     /* ABAIXO TODA PARTE RESPONSÁVEL PELO EFEITO DE APARECER DA DIRETA PARA ESQUERDA */
     
     right: -100%; /* Empurra toda a div com a lista para direita do site pois -100  */
+    height: 100%; /* Pegar toda tela do celular em altura */
     width: 100%;     /* Faz com que pegue a tela toda do celular em largura */
-    transition: all 0.5s;/* Responsável pela lentidão do aparecimento da tela */
-}
+    transition:all 0.5s ;/* Responsável pela lentidão do aparecimento da tela */
+
+    list-style: none; 
+    background-color: #343538;
+    position:fixed;
+    top: 60px;
+    }
 
 *#check:checked~ul{ /* Quando o botão de id = check for marcado vai aparecer a lista dentro de ul */
     right: 0;
@@ -108,12 +114,13 @@ nav ul li a{ /* Tira a decoração de hiperlink (azul)  e coloca branco */
 main{
     height: 75vh;
     background: url(img/banner.jpg);
-    background-size: over;
-    background-position: center;
+    background-size:cover;
+    background-position:center;
     color:white;
+
     display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
+    justify-content:center;
     text-align: center;
 
 }
@@ -123,7 +130,7 @@ main h1{
 }
 main h2{
     font-size: 1em;
-    margin: 20px 0px 50px 0px;
+    margin: 20px 0px 60px 0px;
 }
 
 /* Sobre  */
@@ -157,7 +164,7 @@ main h2{
 
 #onepage{
     padding: 50px 10px;
-    background-color: #f89615;
+    background-color: hsl(24, 100%, 50%);
 }
 #onepage h2{
     margin-bottom: 10px;
@@ -200,6 +207,52 @@ main h2{
 #QrCode{
     display: none;
 }
+
+/* Conteudo Section */
+#Conteudo{
+    padding: 50px 0px;
+}
+#Conteudo h2 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+#todos{
+    margin-top: 25px;
+    text-align: center;
+}
+#todos a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 1.25em;
+}
+.Card{
+    margin-top: 25px;
+    width: 360px;
+    height: 520px;
+    background-color:hsl(24, 100%, 50%);
+    border: 1px solid #a1a1a1;
+    border-radius: 25px;
+    text-align: center;
+}
+.Card img{
+    border-radius: 25px 25px 0px 0px; 
+}
+.Card h3{
+    margin-top: 15px;
+
+}
+.Card p {
+    text-align: black;
+    color: grey;
+    padding: 10px 30px 50px 30px;
+}
+
+.Card a{
+    padding: 10px 100px;
+    margin: 0;
+}
+
 /*-----SMARTPHONE LANDSCAPE----*/
 /* @media serve para alterar informações de acordo com o dispositivo */
 @media(min-width: 576px){
@@ -217,6 +270,7 @@ main h2{
     }
     /* MAIN */
     /* Adicionando sombreamento  */
+
     main h1, main h2{
         text-shadow: black 0.05em 0.05em 0.05em;
     }
@@ -283,7 +337,7 @@ main h2{
         margin-top: 50px;
     }
     nav ul li{
-         float: left; /* Disposição dos itens  */
+        float: left; /* Disposição dos itens  */
         border: 0;
     }
     nav ul li a{
@@ -296,7 +350,7 @@ main h2{
     }
     /* Sobre */
     #sobre{ /* efeito de rolagem parallax na imagem de fundo*/
-        background-attachment: fixed;
+        background-attachment:fixed;
     }
     #DestaqueSobre{
         display: inline;
@@ -312,7 +366,7 @@ main h2{
     }
 
     /* Wireframe */
-    #Wiretexto {
+    #Wireframe {
         background-attachment: fixed;
     }
     #Wiretexto span{
